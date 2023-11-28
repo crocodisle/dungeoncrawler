@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 50866026}
   - component: {fileID: 50866025}
   - component: {fileID: 50866024}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CameraBoundary (1)
   m_TagString: CameraBoundary
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 12.2, y: 3, z: 9.2}
+  m_LocalScale: {x: 12.2, y: 4, z: 9.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1136481341}
@@ -170,7 +170,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 842626452}
   - component: {fileID: 842626451}
   - component: {fileID: 842626450}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CameraBoundary
   m_TagString: CameraBoundary
   m_Icon: {fileID: 0}
@@ -916,7 +916,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -1817,7 +1817,7 @@ GameObject:
   - component: {fileID: 1443679496}
   - component: {fileID: 1443679495}
   - component: {fileID: 1443679498}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
