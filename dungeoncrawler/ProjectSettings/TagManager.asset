@@ -6,6 +6,11 @@ TagManager:
   tags:
   - CameraBoundary
   - FallLimit
+  - SmallKey
+  - RegularDoor
+  - BossDoor
+  - BossKey
+  - SlimeEnemy
   layers:
   - Default
   - TransparentFX
