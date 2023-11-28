@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CameraBoundary
+  - FallLimit
+  - SmallKey
+  - RegularDoor
+  - BossDoor
+  - BossKey
+  - SlimeEnemy
   layers:
   - Default
   - TransparentFX
