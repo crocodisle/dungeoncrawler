@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 699044437138998769}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -102,7 +102,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 4077970878746034471}
   - component: {fileID: 7481997295473747985}
   - component: {fileID: 1860980060313169701}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Link
   m_TagString: Untagged
   m_Icon: {fileID: 0}

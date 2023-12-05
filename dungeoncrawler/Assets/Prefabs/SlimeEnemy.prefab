@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3128745529913911509}
   - component: {fileID: 5300076096472591069}
   - component: {fileID: 224834109483655000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SlimeEnemy
   m_TagString: SlimeEnemy
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2421005357678411823}
   - component: {fileID: 5791287558734129040}
   - component: {fileID: 761465883782598762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 2452103967034636032}
   - component: {fileID: 6490182481979593341}
   - component: {fileID: 3116104228645279449}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 424531969702066004}
   - component: {fileID: 5579716839251465922}
   - component: {fileID: 3636086256191300066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 4666933918386640585}
   - component: {fileID: 353024151203683096}
   - component: {fileID: 4267950815194237207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
