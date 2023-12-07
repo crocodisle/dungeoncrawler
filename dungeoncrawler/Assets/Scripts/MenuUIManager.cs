@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Author: [Cunanan, Joshua/Patrick McGee]
+ * Last Updated: [12/07/2023]
+ * [handles all the menu ui/functions like changing/loading scenes]
+ */
+
 public class MainMenu : MonoBehaviour
 {
     /// <summary>
