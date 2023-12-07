@@ -14,6 +14,7 @@ public class CameraBoundary : MonoBehaviour
         {
             WakeUp();
         }
+        Debug.Log(collidingEntities.Count);
     }
 
     private void OnTriggerExit(Collider other)

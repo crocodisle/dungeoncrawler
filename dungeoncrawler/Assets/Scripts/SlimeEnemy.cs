@@ -24,6 +24,19 @@ public class SlimeEnemy : MonoBehaviour
     {
         FacePlayer();
         Move();
+        Die();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Sword")
+        {
+            HandleDamage(1);
+        }
+        if (other.gameObject.tag == "FallLimit")
+        {
+            Destroy(transform.gameObject);
+        }
     }
 
     private void Move()
@@ -31,6 +44,19 @@ public class SlimeEnemy : MonoBehaviour
         if (moving)
         {
             transform.position += transform.forward * Time.deltaTime * speed;
+        }
+    }
+
+    private void HandleDamage(int damageDealt)
+    {
+        health -= damageDealt;
+    }
+
+    private void Die()
+    {
+        if (health <= 0)
+        {
+            Destroy(transform.gameObject);
         }
     }
 

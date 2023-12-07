@@ -25,7 +25,7 @@ public class Sword : MonoBehaviour
 
     private void HandleSwinging()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             if (!isSwinging)
             {
