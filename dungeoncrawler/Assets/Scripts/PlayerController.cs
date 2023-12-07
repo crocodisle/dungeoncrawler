@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * Author: [Cunanan, Joshua/Patrick McGee]
@@ -49,6 +50,13 @@ public class PlayerController : MonoBehaviour
             Respawn();
             TakeDamage(2);
         }
+
+        if(other.gameObject.tag == "SlimeEnemy")
+        {
+            TakeDamage(1);
+        }
+
+
     }
 
 
@@ -112,6 +120,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isInvincible == false)
         {
+            Debug.Log("Starting Invincibility Coroutine");
             StartCoroutine(Invincibility());
             hitPoints -= damage;
         }
@@ -126,26 +135,35 @@ public class PlayerController : MonoBehaviour
     {
         if (hitPoints <= 0)
         {
-            //change the scene
+            Debug.Log("Player died.");
+            SceneManager.LoadScene(1);
         }
 
     }
 
     IEnumerator Invincibility()
     {
+        //Debug.Log("In coroutine");
         isInvincible = true;
-        for (int index = 0; index == 6; index++)
+        //Debug.Log("isInvincible set to true");
+        for (int index = 0; index <= 6; index++)
         {
+            //Debug.Log("In for loop");
             if (index % 2 == 0)
             {
+                //Debug.Log("Set mesh to false");
                 thisMeshRenderer.enabled = false;
             }
             else
             {
+                //Debug.Log("Set mesh to true");
                 thisMeshRenderer.enabled = true;
             }
-            yield return new WaitForSeconds(.5f);
+            //Debug.Log("waiting");
+            yield return new WaitForSeconds(.25f);
         }
+        thisMeshRenderer.enabled = true;
         isInvincible = false;
+        //Debug.Log("Ending Coroutine");
     }
 }

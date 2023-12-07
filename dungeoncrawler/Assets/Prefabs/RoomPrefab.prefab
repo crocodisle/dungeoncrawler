@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 3260838637219740926}
   - component: {fileID: 740064922108675145}
   - component: {fileID: 212647181105220560}
+  - component: {fileID: 7612129693963638647}
   m_Layer: 6
   m_Name: CameraBoundary (1)
   m_TagString: CameraBoundary
@@ -357,6 +358,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7612129693963638647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306017283504220159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 571a26b32fc112542b01c3faa9f85a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collidingEntities: []
 --- !u!1 &1528967832255460201
 GameObject:
   m_ObjectHideFlags: 0

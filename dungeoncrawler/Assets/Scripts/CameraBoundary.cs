@@ -13,9 +13,8 @@ public class CameraBoundary : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             ToggleEnemies(true);
+            
         }
-        
-        Debug.Log(collidingEntities.Count);
     }
 
     private void ToggleEnemies(bool goTime)

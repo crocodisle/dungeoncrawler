@@ -76,7 +76,8 @@ public class SlimeEnemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            Destroy(transform.gameObject);
+            transform.gameObject.SetActive(false);
+            //Destroy(transform.gameObject);
         }
     }
 
