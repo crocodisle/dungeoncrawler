@@ -12,28 +12,31 @@ public class CameraBoundary : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            WakeUp();
+            ToggleEnemies(true);
         }
+        
         Debug.Log(collidingEntities.Count);
     }
+
+    private void ToggleEnemies(bool goTime)
+    {
+        foreach (var entity in collidingEntities)
+        {
+            if (entity.tag == "SlimeEnemy")
+            {
+                entity.GetComponent<SlimeEnemy>().awake = goTime;
+            }
+        }
+    }
+
 
     private void OnTriggerExit(Collider other)
     {
         collidingEntities.Remove(other.transform.gameObject);
-    }
 
-    private void WakeUp()
-    {
-        foreach (var entity in collidingEntities)
+        if(other.gameObject.tag == "Player")
         {
-            if (entity.gameObject.tag == "Player")
-            {
-
-            }
-            else
-            {
-                entity.SetActive(true);
-            }
+            ToggleEnemies(false);
         }
     }
 

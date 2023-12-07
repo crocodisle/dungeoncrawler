@@ -16,21 +16,34 @@ public class SlimeEnemy : MonoBehaviour
     public GameObject playerToFollow;
 
     public bool moving = true;
-    public bool awake = true;
+    public bool awake = false;
+    public bool canMove = false;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(ToggleMove());
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        FacePlayer();
-        Move();
-        Die();
+        if (awake)
+        {
+            FacePlayer();
+            Move();
+            Die();
+            if (!canMove)
+            {
+                canMove = true;
+                StartCoroutine(ToggleMove());
+            }
+        }
+        else
+        {
+            canMove = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,6 +60,7 @@ public class SlimeEnemy : MonoBehaviour
 
     private void Move()
     {
+
         if (moving)
         {
             transform.position += transform.forward * Time.deltaTime * speed;
