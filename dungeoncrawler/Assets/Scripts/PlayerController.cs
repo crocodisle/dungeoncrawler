@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: [Cunanan, Joshua/Patrick McGee]
+ * Last Updated: [12/07/2023]
+ * [Description of the file's basic functions]
+ */
+
+
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;

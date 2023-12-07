@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/*
+ * Author: [Cunanan, Joshua/Patrick McGee]
+ * Last Updated: [12/07/2023]
+ * [Description of the file's basic functions]
+ */
+
 public class SlimeEnemy : MonoBehaviour
 {
     public float speed = 1.5f;
