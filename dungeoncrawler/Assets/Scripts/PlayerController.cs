@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public bool isInvincible = false;
     public int hitPoints = 8;
     public int smallKeysHeld = 0;
+    public int bossKeysHeld = 0;
 
     private Rigidbody thisRigidbody;
     private MeshRenderer thisMeshRenderer;
@@ -61,6 +62,19 @@ public class PlayerController : MonoBehaviour
             if (smallKeysHeld >= 1)
             {
                 smallKeysHeld--;
+                other.gameObject.SetActive(false);
+            }
+        }
+        if (other.gameObject.tag == "BossKey")
+        {
+            bossKeysHeld++;
+            other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.tag == "BossDoor")
+        {
+            if (bossKeysHeld >= 1)
+            {
+                bossKeysHeld--;
                 other.gameObject.SetActive(false);
             }
         }
