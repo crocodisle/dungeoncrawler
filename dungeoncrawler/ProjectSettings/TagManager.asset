@@ -12,6 +12,8 @@ TagManager:
   - BossKey
   - SlimeEnemy
   - Sword
+  - BatEnemy
+  - SkeletonEnemy
   layers:
   - Default
   - TransparentFX
