@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219bf934ea3f05946aa81e806fe8a979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 2
   health: 1
   playerToFollow: {fileID: 3233431182522491920, guid: 1ffb8c887a2d9af499aba44129c8ed62, type: 3}
   moving: 0

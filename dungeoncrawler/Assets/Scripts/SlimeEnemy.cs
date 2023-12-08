@@ -56,6 +56,10 @@ public class SlimeEnemy : MonoBehaviour
         {
             Destroy(transform.gameObject);
         }
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(1);
+        }
     }
 
     private void Move()
@@ -76,10 +80,12 @@ public class SlimeEnemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            transform.gameObject.SetActive(false);
-            //Destroy(transform.gameObject);
+            //transform.gameObject.SetActive(false);
+            Destroy(transform.gameObject);
         }
     }
+
+    
 
     private IEnumerator ToggleMove()
     {

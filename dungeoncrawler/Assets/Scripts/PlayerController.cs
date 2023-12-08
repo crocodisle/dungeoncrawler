@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public int facingDirection = 0; //0 = North, 1 = East, 2 = South, 3 = West
     public bool isInvincible = false;
     public int hitPoints = 8;
+    public int smallKeysHeld = 0;
 
     private Rigidbody thisRigidbody;
     private MeshRenderer thisMeshRenderer;
@@ -50,12 +51,19 @@ public class PlayerController : MonoBehaviour
             Respawn();
             TakeDamage(2);
         }
-
-        if(other.gameObject.tag == "SlimeEnemy")
+        if (other.gameObject.tag == "SmallKey")
         {
-            TakeDamage(1);
+            smallKeysHeld++;
+            other.gameObject.SetActive(false);
         }
-
+        if (other.gameObject.tag == "RegularDoor")
+        {
+            if (smallKeysHeld >= 1)
+            {
+                smallKeysHeld--;
+                other.gameObject.SetActive(false);
+            }
+        }
 
     }
 
@@ -116,7 +124,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if (isInvincible == false)
         {
