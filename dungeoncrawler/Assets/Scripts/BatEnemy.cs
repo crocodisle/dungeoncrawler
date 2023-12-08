@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class BatEnemy : MonoBehaviour
 {
-    public float speed = 1.5f;
+    public float speed = 3f;
     public int health = 1;
     private float randomDirection;
 
