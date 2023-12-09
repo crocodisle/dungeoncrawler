@@ -52,6 +52,11 @@ public class CameraBoundary : MonoBehaviour
                 Debug.Log("Awakening Skeletons");
                 entity.GetComponent<SkeletonEnemy>().awake = goTime;
             }
+            if (entity.tag == "SpikeTrap")
+            {
+                Debug.Log("Awakening Spike Traps");
+                entity.GetComponentInChildren<SpikeTrap>().awake = goTime;
+            }
         }
     }
 

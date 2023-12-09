@@ -12,8 +12,9 @@ public class SpikeTrap : MonoBehaviour
 {
     public GameObject spikeHome;
     public GameObject[] targets;
-    public float speed = 20f;
+    public float speed = 10f;
 
+    public bool awake = false;
     public bool triggered = false;
     public Vector3 currentTarget;
     public bool moving = false;
@@ -55,10 +56,17 @@ public class SpikeTrap : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(1);
+        }
+    }
 
     private void FixedUpdate()
     {
-        if (!triggered)
+        if (!triggered && awake)
         {
             RaycastHit hit;
             foreach (GameObject target in targets)
