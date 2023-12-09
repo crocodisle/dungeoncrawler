@@ -68,12 +68,12 @@ public class SkeletonEnemy : MonoBehaviour
 
             if (playerDetected)
             {
-                Debug.Log("Detected");
+                //Debug.Log("Detected");
                 dashOnCooldown = false;
             }
             else
             {
-                Debug.Log("Not Detected");
+                //Debug.Log("Not Detected");
                 dashOnCooldown = true;
             }
         }

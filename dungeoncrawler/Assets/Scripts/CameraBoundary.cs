@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraBoundary : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class CameraBoundary : MonoBehaviour
     public bool playerPresent = false;
     public bool isKeySpawnable = false;
     public GameObject keyToSpawn;
+    public bool isBossRoom = false;
+    public GameObject bossMonster;
 
 
     private void Update()
@@ -18,6 +21,10 @@ public class CameraBoundary : MonoBehaviour
             if ((collidingEntities.Count < 2) && isKeySpawnable){
                 keyToSpawn.SetActive(true);
                 isKeySpawnable = false;
+            }
+            if (isBossRoom && !collidingEntities.Contains(bossMonster))
+            {
+                SceneManager.LoadScene(2);
             }
         }
     }
@@ -56,6 +63,11 @@ public class CameraBoundary : MonoBehaviour
             {
                 Debug.Log("Awakening Spike Traps");
                 entity.GetComponentInChildren<SpikeTrap>().awake = goTime;
+            }
+            if (entity.tag == "Boss1")
+            {
+                Debug.Log("Awakening Boss1");
+                entity.GetComponent<Boss1Movement>().awake = goTime;
             }
         }
     }
