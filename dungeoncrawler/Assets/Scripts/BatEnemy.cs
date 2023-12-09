@@ -17,6 +17,7 @@ public class BatEnemy : MonoBehaviour
     public bool moving = false;
     public bool awake = false;
     public bool newRandom = true;
+    public bool isInvincible = false;
 
 
     // Start is called before the first frame update
@@ -87,7 +88,12 @@ public class BatEnemy : MonoBehaviour
 
     private void HandleDamage(int damageDealt)
     {
-        health -= damageDealt;
+        if (!isInvincible)
+        {
+            health -= damageDealt;
+            StartCoroutine(Invincibility());
+        }
+        
     }
 
     private void Die()
@@ -137,4 +143,13 @@ public class BatEnemy : MonoBehaviour
         }
     }
 
+    IEnumerator Invincibility()
+    {
+        //Debug.Log("In coroutine");
+        isInvincible = true;
+        //Debug.Log("isInvincible set to true");
+        yield return new WaitForSeconds(.25f);
+        isInvincible = false;
+        //Debug.Log("Ending Coroutine");
+    }
 }

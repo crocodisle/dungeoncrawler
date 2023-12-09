@@ -69,6 +69,11 @@ public class CameraBoundary : MonoBehaviour
                 Debug.Log("Awakening Boss1");
                 entity.GetComponent<Boss1Movement>().awake = goTime;
             }
+            if (entity.tag == "Boss2")
+            {
+                Debug.Log("Awakening Boss2");
+                entity.GetComponent<Boss2>().awake = goTime;
+            }
         }
     }
 

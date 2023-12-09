@@ -18,6 +18,7 @@ public class SkeletonEnemy : MonoBehaviour
     public bool awake = false;
     public bool isDashing = false;
     public bool dashOnCooldown = true;
+    public bool isInvincible = false;
 
     // Update is called once per frame
     void Update()
@@ -104,7 +105,11 @@ public class SkeletonEnemy : MonoBehaviour
 
     private void HandleDamage(int damageDealt)
     {
-        health -= damageDealt;
+        if (!isInvincible)
+        {
+            health -= damageDealt;
+            StartCoroutine(Invincibility());
+        }
     }
 
     private void Die()
@@ -131,6 +136,16 @@ public class SkeletonEnemy : MonoBehaviour
             yield return new WaitForSeconds(.50f);
             dashOnCooldown = false;
         }
+    }
+
+    IEnumerator Invincibility()
+    {
+        //Debug.Log("In coroutine");
+        isInvincible = true;
+        //Debug.Log("isInvincible set to true");
+        yield return new WaitForSeconds(.25f);
+        isInvincible = false;
+        //Debug.Log("Ending Coroutine");
     }
 
     private void FacePlayer()
