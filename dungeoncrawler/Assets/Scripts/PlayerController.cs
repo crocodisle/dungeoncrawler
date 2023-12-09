@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 /*
  * Author: [Cunanan, Joshua/Patrick McGee]
  * Last Updated: [12/07/2023]
- * [Description of the file's basic functions]
+ * [Controls the behavior of the player character.]
  */
 
 
@@ -81,7 +81,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
+    /// <summary>
+    /// Handles player movement and rotation.
+    /// </summary>
     private void Move()
     {
         if (Input.GetKeyDown(KeyCode.W))
@@ -138,6 +140,10 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Handles dealing damage to the player. Also starts invincibility coroutine.
+    /// </summary>
+    /// <param name="damage">The amount of damage to deal to the player.</param>
     public void TakeDamage(int damage)
     {
         if (isInvincible == false)
@@ -148,11 +154,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets player position to respawn point object.
+    /// </summary>
     private void Respawn()
     {
         transform.position = spawnPoint.transform.position;
     }
 
+    /// <summary>
+    /// Checks to see if the player drops below a certain HP.
+    /// </summary>
     private void HandleDeath()
     {
         if (hitPoints <= 0)
@@ -163,6 +175,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Coroutine for temporary invincibility and blinking.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Invincibility()
     {
         //Debug.Log("In coroutine");

@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Author: [Cunanan, Joshua/Patrick McGee]
+ * Last Updated: [12/07/2023]
+ * [Contains code that determines whether or not the player is in a room.]
+ */
+
 public class CameraBoundary : MonoBehaviour
 {
     public List<GameObject> collidingEntities;
@@ -41,6 +47,10 @@ public class CameraBoundary : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// "Awakens" the enemies that are colliding with this CameraBoundary. 
+    /// </summary>
+    /// <param name="goTime">A boolean value that determines whether enemies should be awake or not.</param>
     private void ToggleEnemies(bool goTime)
     {
         foreach (var entity in collidingEntities)
@@ -63,11 +73,6 @@ public class CameraBoundary : MonoBehaviour
             {
                 Debug.Log("Awakening Spike Traps");
                 entity.GetComponentInChildren<SpikeTrap>().awake = goTime;
-            }
-            if (entity.tag == "Boss1")
-            {
-                Debug.Log("Awakening Boss1");
-                entity.GetComponent<Boss1Movement>().awake = goTime;
             }
             if (entity.tag == "Boss2")
             {

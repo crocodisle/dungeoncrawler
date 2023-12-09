@@ -4,7 +4,11 @@ using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+/*
+ * Author: [Cunanan, Joshua/Patrick McGee]
+ * Last Updated: [12/07/2023]
+ * [Handles updating the in-game UI.]
+ */
 public class GameUIManager : MonoBehaviour
 {
     public TMP_Text totalHealthText;

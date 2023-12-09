@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * Author: [Cunanan, Joshua/Patrick McGee]
  * Last Updated: [12/07/2023]
- * [Description of the file's basic functions]
+ * [Contains code that determines the bat enemy's behavior.]
  */
 
 public class BatEnemy : MonoBehaviour
@@ -18,13 +18,6 @@ public class BatEnemy : MonoBehaviour
     public bool awake = false;
     public bool newRandom = true;
     public bool isInvincible = false;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -57,6 +50,9 @@ public class BatEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks for a collision with the enemy a ways away from the monster so the monster knows to move out of the way.
+    /// </summary>
     private void CheckNearby()
     {
         if (!moving)
@@ -72,6 +68,9 @@ public class BatEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles how the monster moves and starts the coroutine that causes the monster to fidget.
+    /// </summary>
     private void Move()
     {
         
@@ -86,6 +85,10 @@ public class BatEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles how the monster takes damage.
+    /// </summary>
+    /// <param name="damageDealt">The amount of damage to do to the monster.</param>
     private void HandleDamage(int damageDealt)
     {
         if (!isInvincible)
@@ -96,6 +99,9 @@ public class BatEnemy : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Handles monster death.
+    /// </summary>
     private void Die()
     {
         if (health <= 0)
@@ -105,6 +111,10 @@ public class BatEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Changes the monster's rotation based on a periodically generated random number.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator RandomNumber()
     {
         newRandom = false;
@@ -130,6 +140,10 @@ public class BatEnemy : MonoBehaviour
         newRandom = true;
     }
 
+    /// <summary>
+    /// Determines how long the monster should move for.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator StartMove()
     {
         if (awake)
@@ -143,6 +157,10 @@ public class BatEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the monster invincible. Only applies to a boss version of this monster.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Invincibility()
     {
         //Debug.Log("In coroutine");

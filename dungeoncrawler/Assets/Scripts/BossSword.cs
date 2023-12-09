@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Author: [Cunanan, Joshua/Patrick McGee]
+ * Last Updated: [12/07/2023]
+ * [Controls the boss's sword whenever the player swings, but with a longer delay between swings.]
+ */
 public class BossSword : MonoBehaviour
 {
     private bool isSwinging = false;
@@ -34,6 +39,9 @@ public class BossSword : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks to see if the player is swinging their sword and swings the boss's sword at the same time.
+    /// </summary>
     private void HandleSwinging()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -45,6 +53,10 @@ public class BossSword : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the delays on how long the boss's sword is swung and adds an extra cooldown compared to the player's sword. 
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Swing()
     {
         isSwinging = true;

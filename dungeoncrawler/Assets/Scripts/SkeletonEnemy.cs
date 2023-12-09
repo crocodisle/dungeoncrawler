@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * Author: [Cunanan, Joshua/Patrick McGee]
  * Last Updated: [12/07/2023]
- * [Description of the file's basic functions]
+ * [Handles skeleton behavior.]
  */
 
 public class SkeletonEnemy : MonoBehaviour
@@ -53,6 +53,9 @@ public class SkeletonEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks a nearby collission to see if the player is near, and whether it should be able to dash or not.
+    /// </summary>
     private void CheckNearby()
     {
         if (awake)
@@ -80,6 +83,9 @@ public class SkeletonEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks to see if the keycode to swing the player's sword is pressed and starts the dash subroutine if it is.
+    /// </summary>
     private void CheckPlayerSwing()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -91,6 +97,9 @@ public class SkeletonEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles all skeleton movement.
+    /// </summary>
     private void Move()
     {
         if (moving)
@@ -103,6 +112,10 @@ public class SkeletonEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles taking damange.
+    /// </summary>
+    /// <param name="damageDealt">The amount of damage to take.</param>
     private void HandleDamage(int damageDealt)
     {
         if (!isInvincible)
@@ -112,6 +125,9 @@ public class SkeletonEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks to see if health drops below 1 and destroys the monster if so.
+    /// </summary>
     private void Die()
     {
         if (health <= 0)
@@ -122,7 +138,10 @@ public class SkeletonEnemy : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Handles turning off and on the flags needed for the skeleton to dash away from attacks.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ToggleDash()
     {
         if (awake)
@@ -138,6 +157,10 @@ public class SkeletonEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles invincibility (only relevant for a boss version of this monster).
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Invincibility()
     {
         //Debug.Log("In coroutine");
@@ -148,6 +171,9 @@ public class SkeletonEnemy : MonoBehaviour
         //Debug.Log("Ending Coroutine");
     }
 
+    /// <summary>
+    /// Makes the skeleton look at the player to it can move towards them.
+    /// </summary>
     private void FacePlayer()
     {
         transform.LookAt(playerToFollow.transform.position);

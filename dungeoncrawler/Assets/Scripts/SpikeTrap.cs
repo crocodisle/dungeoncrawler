@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * Author: [Cunanan, Joshua/Patrick McGee]
  * Last Updated: [12/07/2023]
- * [Description of the file's basic functions]
+ * [Handles spike trap behavior.]
  */
 
 public class SpikeTrap : MonoBehaviour
@@ -20,18 +20,15 @@ public class SpikeTrap : MonoBehaviour
     public bool moving = false;
     public bool returning = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         Movement();
     }
 
+    /// <summary>
+    /// Handles how the spike trap moves in relation to its sibling objects.
+    /// </summary>
     private void Movement()
     {
         if (moving)
@@ -56,6 +53,7 @@ public class SpikeTrap : MonoBehaviour
         }
 
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -73,11 +71,11 @@ public class SpikeTrap : MonoBehaviour
             {
                 if (Physics.Raycast(transform.position, target.transform.position - transform.position, out hit, Vector3.Distance(transform.position, target.transform.position)))
                 {
-                    Debug.Log("Checking " + target);
+                    //Debug.Log("Checking " + target);
                     Debug.Log(Vector3.Distance(transform.position, target.transform.position));
                     if (hit.transform.gameObject.tag == "Player")
                     {
-                        Debug.Log("Triggering!");
+                        //Debug.Log("Triggering!");
                         currentTarget = target.transform.position;
                         moving = true;
                         triggered = true;

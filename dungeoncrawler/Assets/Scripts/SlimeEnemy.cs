@@ -6,7 +6,7 @@ using UnityEngine;
 /*
  * Author: [Cunanan, Joshua/Patrick McGee]
  * Last Updated: [12/07/2023]
- * [Description of the file's basic functions]
+ * [Contains code that determines the slime enemy's behavior.]
  */
 
 public class SlimeEnemy : MonoBehaviour
@@ -18,13 +18,6 @@ public class SlimeEnemy : MonoBehaviour
     public bool moving = true;
     public bool awake = false;
     public bool canMove = false;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -62,6 +55,9 @@ public class SlimeEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The code that makes the enemy move.
+    /// </summary>
     private void Move()
     {
 
@@ -71,11 +67,18 @@ public class SlimeEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The code that handles reducing the monster's health.
+    /// </summary>
+    /// <param name="damageDealt">The amount of damage to deal to the monster.</param>
     private void HandleDamage(int damageDealt)
     {
         health -= damageDealt;
     }
 
+    /// <summary>
+    /// Code that checks to see if the monster drops below 1 hitpoint.
+    /// </summary>
     private void Die()
     {
         if (health <= 0)
@@ -86,7 +89,10 @@ public class SlimeEnemy : MonoBehaviour
     }
 
     
-
+    /// <summary>
+    /// Makes the monster move in a funny way by a series of delays.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator ToggleMove()
     {
         while (awake)
@@ -105,6 +111,9 @@ public class SlimeEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Makes the monster face towards the player so it can move towards them.
+    /// </summary>
     private void FacePlayer()
     {
         transform.LookAt(playerToFollow.transform.position);

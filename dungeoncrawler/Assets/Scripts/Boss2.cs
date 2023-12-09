@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * Author: [Cunanan, Joshua/Patrick McGee]
  * Last Updated: [12/07/2023]
- * [Description of the file's basic functions]
+ * [Handles movement and health for Boss2.]
  */
 
 public class Boss2 : MonoBehaviour
@@ -46,6 +46,9 @@ public class Boss2 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles moving the boss.
+    /// </summary>
     private void Move()
     {
         if (moving)
@@ -54,6 +57,10 @@ public class Boss2 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles when the boss takes damage.
+    /// </summary>
+    /// <param name="damageDealt">The amount of damage the boss should take.</param>
     private void HandleDamage(int damageDealt)
     {
         if (!isInvincible)
@@ -63,6 +70,9 @@ public class Boss2 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks whether the boss is below a certain amount of HP and destroys them if they are.
+    /// </summary>
     private void Die()
     {
         if (health <= 0)
@@ -72,6 +82,10 @@ public class Boss2 : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handles toggling the boss's invincibility after getting hit by the player.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Invincibility()
     {
         //Debug.Log("In coroutine");
@@ -82,6 +96,9 @@ public class Boss2 : MonoBehaviour
         //Debug.Log("Ending Coroutine");
     }
 
+    /// <summary>
+    /// Makes the boss turn to face the player.
+    /// </summary>
     private void FacePlayer()
     {
         transform.LookAt(playerToFollow.transform.position);

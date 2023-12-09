@@ -5,7 +5,7 @@ using UnityEngine;
 /*
  * Author: [Cunanan, Joshua/Patrick McGee]
  * Last Updated: [12/07/2023]
- * [Description of the file's basic functions]
+ * [Contains code that determines the player's sword behavior.]
  */
 
 public class Sword : MonoBehaviour
@@ -28,7 +28,9 @@ public class Sword : MonoBehaviour
         HandleSwinging();
     }
 
-
+    /// <summary>
+    /// Gets input for swinging the sword and starts the coroutine for having it out.
+    /// </summary>
     private void HandleSwinging()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -40,6 +42,10 @@ public class Sword : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// The coroutine for making the sword appear and collide with enemies.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Swing()
     {
         isSwinging = true;
